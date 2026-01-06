@@ -24,7 +24,6 @@ body {
 .logo {
   font-size: 24px;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -52,31 +51,81 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 20px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  background-size: 400% 400%;
+  transition: background 1s ease-in-out;
 }
 
-.hero h2 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  max-width: 600px;
-  font-size: 18px;
+.profile-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* stack on small screens */
+  justify-content: center;
+  align-items: flex-start; /* align top of profiles */
   margin-bottom: 30px;
 }
 
-.hero button {
-  padding: 12px 30px;
-  border: none;
-  background-color: #a67c52;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; /* fixed width for equal alignment */
 }
 
-.hero button:hover {
+/* Profile Picture */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Hero Name */
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  line-height: 1.2; /* tighter line spacing */
+}
+
+/* Hero Intro */
+.hero p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  max-width: 200px; /* match profile width */
+  text-align: center;
+  white-space: pre-line; /* allows forced newlines if needed */
+}
+
+/* Button */
+.hero-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #a67c52;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 4px;
+}
+
+/* Button hover */
+.hero-button:hover {
   background-color: #8a6239;
+}
+
+/* Fade effect */
+.fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade.show {
+  opacity: 1;
 }
 
 /* FOOTER */
@@ -85,16 +134,26 @@ footer {
   padding: 20px;
   border-top: 1px solid #ddd;
   font-size: 14px;
+  width: 100%;
 }
 
-/* MOBILE RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .nav-links {
+  .profile-container {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+  }
+
+  .profile {
+    width: 220px;
   }
 
   .hero h2 {
-    font-size: 36px;
+    font-size: 24px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
   }
 }
