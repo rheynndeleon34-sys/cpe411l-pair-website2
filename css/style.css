@@ -319,3 +319,101 @@ footer {
     padding: 10px 15px;
   }
 }
+
+/* -------------------- PROJECTS HERO -------------------- */
+.projects-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #111;
+}
+
+.projects-hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.projects-hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* -------------------- PROJECT GRID (2x2) -------------------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 30px;
+  padding: 50px 20px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 0 10px;
+  font-size: 20px;
+}
+
+.project-card p {
+  font-size: 14px;
+  padding: 0 15px 15px;
+  line-height: 1.4;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #a67c52;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-btn:hover {
+  background-color: #8a6239;
+}
+
+/* HOVER EFFECT */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* FADE-IN ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+}
